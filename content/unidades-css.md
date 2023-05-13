@@ -7,7 +7,7 @@ description: ""
 
 
 EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el video de youtube o tiktok, o escribeme a este correo.
-
+:globe_with_meridians:
 
 | Nombre de unidad CSS | ¿Cuando Usar? | Video explicativo | 
 | --------------------|---------------|------------------|
@@ -20,6 +20,62 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 | fr                  | Para tamaños relativos al alto de la ventana. | [FR en CSS](https://www.tiktok.com/@craftingcode/video/7227102345446837509). |
 | ch                  | Para tamaños relativos al alto de la ventana. | [CH en CSS](https://www.tiktok.com/@craftingcode/video/7226754225395551493). |
 | qw/qh                  | Para tamaños relativos al alto de la ventana. | [QW/QH](https://www.tiktok.com/@craftingcode/video/71562735914435412540). |
+
+
+# PX para borders y sombras
+
+
+:red_circle: Evita PX para font-size ya que no escalará con tu diseño responsive.
+
+```css
+.Component {
+  font-size: 20px;
+}
+```
+
+:white_check_mark: Usa PX en sombras o borders ya que no necesitan escalar:
+
+```css
+.Component {
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+```
+
+
+# REM para font-size
+
+
+:red_circle: Evita PX para font-size ya que no escalará con tu diseño responsive.
+
+```css
+.Component {
+  font-size: 1.2em;
+}
+.Component-heading {
+  font-size: 1em;
+}
+.Component-body {
+  font-size: 0.75em;
+}
+```
+
+:white_check_mark: Usa PX en sombras o borders ya que no necesitan escalar:
+
+```css
+.Component {
+}
+.Component-heading {
+  font-size: 1.2em;
+}
+.Component-body {
+  font-size: 0.9em;
+}
+```
+
+:zap: **Ejemplo**: [PX vs EM vs REM](https://codepen.io/indiesquidge/pen/VKoKwy)
+
+
 
 
 # Fuentes
@@ -39,14 +95,13 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 - [Why the font size won't change with browser zoom in?](https://stackoverflow.com/questions/7907760/why-the-font-size-wont-change-with-browser-zoom-in)
 - [Media Queries for Different zoom Levels of Browser](https://stackoverflow.com/questions/22223866/media-queries-for-different-zoom-levels-of-browser)
 - [Looking At How Browser Zoom Affects CSS Media Queries And Pixel-Density](https://www.bennadel.com/blog/3811-looking-at-how-browser-zoom-affects-css-media-queries-and-pixel-density.htm)
-- [Ejemplo Media query EM vs PX](https://codepen.io/nwalton3/full/MWwYMg)
+- :zap: [Ejemplo Media query EM vs PX](https://codepen.io/nwalton3/full/MWwYMg)
 
 
 ## ¿REM media queries?
 - [REM based media queries are weird](https://smth.uk/rem-based-media-queries-are-weird/)
 
 ## ¿Necesitas media queries?
-
 - [The Pros And Cons Of Media Queries Vs Srcset For Responsive Design](https://stackoverflow.com/questions/7907760/why-the-font-size-wont-change-with-browser-zoom-in)
 
 ## Unidades PX, REM, y EM
@@ -55,13 +110,12 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 - [A Look Into CSS Units: Pixels, EM, and Percentage](https://www.hongkiat.com/blog/css-units/)
 
 ## Unidad LH
-
 - [Try out the CSS lh unit in Safari Preview](https://web.archive.org/web/20210625060529/https://webplatform.news/issues/2020-04-29)
 - [`lh` and `rlh` units](https://css-tricks.com/lh-and-rlh-units/)
 - [Intro to lh and rlh in CSS](https://medium.com/@KasraKhosravi/intro-to-lh-and-rlh-in-css-39414a55d61a)
 - [The new (and old) CSS units you've never heard about](https://dev.to/maxart2501/the-new-and-old-css-units-youve-never-heard-about-1mn1)
-- [Ejemplo lh](https://jsbin.com/rigomah/edit?html,css,output)
-- [Soporte lh](https://caniuse.com/?search=lh%20unit)
+- :zap: [Ejemplo lh](https://jsbin.com/rigomah/edit?html,css,output)
+- :globe_with_meridians: [Soporte lh](https://caniuse.com/?search=lh%20unit)
 
 
 ## Unidades vw y vh
@@ -69,12 +123,11 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 - [A deep study on CSS Units](https://smazee.com/blog/css-units-px-em-rem-vh-vw-vmin-vmax)
 - [Viewport concepts](https://developer.mozilla.org/en-US/docs/Web/CSS/Viewport_concepts)
 - [Viewport units CSS. Qué es y cómo utilizar las unidades vh, vw, vmin y vmax](https://www.yunbitsoftware.com/blog/2017/06/22/viewport-units-css-que-es/)
-- [Ejemplo Original (roto)](https://codepen.io/cartuhok/pen/pgwPbP)
-- [Ejemplo con imagen funcionando](https://codepen.io/davidjsalazarmoreno/pen/PoyQqQv)
-- [Soporte vw y vh](https://caniuse.com/?search=vw%20)
+- :zap: [Ejemplo Original (roto)](https://codepen.io/cartuhok/pen/pgwPbP)
+- :zap: [Ejemplo con imagen funcionando](https://codepen.io/davidjsalazarmoreno/pen/PoyQqQv)
+- :globe_with_meridians: [Soporte vw y vh](https://caniuse.com/?search=vw%20)
 
 ## Unidad %
-
 - [A guide to CSS units — pt. 3: percents, viewports, magic and best practices](https://www.peerigon.com/en/blog/complete-guide-to-css-units-series-part-3-percentages-and-viewport-units/)
 - [CSS values and units](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units#percentages)
 - [percentage](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage)

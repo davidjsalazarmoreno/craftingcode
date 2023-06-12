@@ -42,6 +42,8 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 }
 ```
 
+:zap: **Ejemplo**: [TBD]()
+
 
 # REM para font-size
 
@@ -75,6 +77,126 @@ EN CONSTRUCCION, si tienes algun feedback o correcion por favor comenta en el vi
 
 :zap: **Ejemplo**: [PX vs EM vs REM](https://codepen.io/indiesquidge/pen/VKoKwy)
 
+# EM para escalar margin y padding
+
+:red_circle: Evita EM para font-size, las unidades EM son relativas al font-size de su elemento actual.
+
+PERO, si ese elemento actual no tiene font-size establecido la unidad EM verá el font-size del elemento padre.
+
+Y si ese no tiene verá el font-size de elemento abuelo, y así sucesivamente.
+
+Esta es una receta para el desastre, causando una cascada de efectos que dañen como se establece el tamaño del font-size en la web.
+
+```css
+.abuelo {
+  font-size: 12px;
+}
+
+.padre {
+  /* Olvido colocar el font-size a 8px */
+  border: 1px solid red;
+}
+
+.hijo {
+  /* Esperamos que el font-size sea de 4px: 
+  * 0.500rem * 8px (Font-size de .padre) = 4px
+  * 
+  * PERO como NO agregamos
+  * font-size en .padre mirara el font-size de .abuelo :red_circle:
+  *
+  * 0.500rem * 12px (Font-size de .abuelo) = 6px
+  *
+  */
+  font-size: 0.500rem;
+}
+```
+
+:white_check_mark: EM para escalar margin y padding con respecto a su font-size
+
+Ya que cuando usamos la unidad EM en anchura, padding o margin será relativa al font-size del elemento actual.
+
+```css
+html {
+  font-size:  62.5%; /* 62.5% de 16px */
+}
+
+.texto {
+  font-size: 0.500rem;
+  padding: 1em;
+  width: 20em;
+  margin: 2em;	
+}
+```
+
+:zap: **Ejemplo**: [TBD]()
+
+# vw y vh para elementos que abarquen todo el viewport
+
+El viewport es esta área visible del navegador.
+
+```css
+.fullscreen {
+  /* Establece el ancho del elemento al ancho completo de la ventana gráfica */
+  width: 100vw;
+  /* Establece la altura del elemento a la altura completa de la ventana gráfica */
+  height: 100vh;
+  background-image: url('imagen.jpg'); 
+  /* Hace que la imagen de fondo cubra todo el elemento */
+  background-size: cover; 
+}
+```
+
+https://codepen.io/davidjsalazarmoreno/full/PoyQqQv
+
+# Usa lh para centrar elementos inline-block
+
+La unidad lh es útil para centrar verticalmente iconos en elementos inline-block.
+
+Video explicativo
+
+```css
+span {
+  background: hotpink;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1em;
+}
+
+.inline-icon {
+  display: inline-block;
+  width: 1lh;
+  height: 1lh;
+}
+```
+
+Esta unidad es nueva y es experimental, aún quedan muchos casos por cubrir, buenas prácticas por emerger y NO todos los navegadores la soportan.
+
+Por lo que no, no es recomendable usarla en producción al momento de escribir este articulo, si vienes del futuro esto quizás ha cambiado.
+
+
+Ejemplo solo disponible en chrome https://jsbin.com/rigomah/edit?html,css,output
+
+video explicativo
+
+
+# Usa ch para establecer max-width
+
+Establecer max-width en un párrafo.
+
+Así nos aseguramos que la anchura máxima de un elemento no sea mayor a 75 caracteres en pantalla, lo que mejorará la legibilidad del texto en tu web.
+
+```css
+p {
+  max-width: 75ch;
+}
+``
+
+video explicativo
+ejemplo
+investigacion de caracteres
+
+# Usa % para establecer max-width
 
 
 

@@ -1,20 +1,25 @@
 languageCode = "es"
 languageName = "Español"
-displayName = "ES"
-isoCode = "es"
 weight = 1
-rtl = false
 
-title = "Craftingcode"
-# logo = "images/author.png"
-description = "Hablamos sobre desarrollo de software, ¡lleva tu conocimiento al siguiente nivel!."
+title = "CraftingCode"
+
+
 copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "2 January 2006"
 
-[author]
+[languages]
+  [languages.es]
+    [languages.es.params]
+      isoCode = "es"
+      displayName = "ES"
+      rtl = false
+      dateFormat = "2 January 2006"
+      description = "Hablamos sobre desarrollo de software, ¡lleva tu conocimiento al siguiente nivel!."
+
+[params.author]
 name = "CraftingCode"
-# image = "images/author.png"
+image = "images/logo.jpg"
 headline = "Hablamos sobre desarrollo de software, ¡lleva tu conocimiento al siguiente nivel!."
 # bio = ""
 links = [

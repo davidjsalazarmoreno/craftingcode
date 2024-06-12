@@ -1,5 +1,5 @@
 ---
-title: "Lo nuevo en React 19"
+title: "Lo nuevo en React 19: Actions"
 date: 2024-06-11T14:30:58-05:00
 draft: false
 description: "Lo nuevo en React 19"

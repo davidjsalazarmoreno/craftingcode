@@ -103,3 +103,7 @@ Aun así sigue siendo mucho código por ejemplo el error aún está siendo manej
 En el siguiente artículo veremos otro escenario: **las actualizaciones optimistas con lo que simplificamos este código**.
 
 
+---
+
+{{< newsletter >}}
+

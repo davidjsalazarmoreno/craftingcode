@@ -2,10 +2,12 @@ baseURL = "https://craftingcode.dev"
 defaultContentLanguage = "es"
 
 enableRobotsTXT = true
-paginate = 10
 summaryLength = 0
 
 googleAnalytics = "G-XL5G4KP0XD"
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
+
+[pagination]
+pageSize=10

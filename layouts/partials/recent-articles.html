@@ -1,0 +1,17 @@
+{{ if .Site.Params.homepage.showRecent | default false }}
+  <h2 class="mt-8 text-2xl font-extrabold">{{ i18n "shortcode.recent_articles" | emojify }}</h2>
+  {{ range first 5 (.Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)).Pages }}
+    {{ partial "article-link.html" . }}
+  {{ end }}
+{{ end }}
+
+<article class="mt-8">
+    <p class="font-bold">
+    ¡Suscríbete a nuestro boletín para recibir nuestro  contenido!
+    </p> 
+    <br/>
+  
+    <iframe src="https://embeds.beehiiv.com/0789d1a6-0106-4ad8-a134-810b6bfb4f7b?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+    </article>
+<section>
+</article>

@@ -1,5 +1,5 @@
 ---
-title: "Lo nuevo en React 19"
+title: "Lo nuevo en React 19: Actions"
 date: 2024-06-11T14:30:58-05:00
 draft: false
 description: "Lo nuevo en React 19"
@@ -11,7 +11,7 @@ description: "Lo nuevo en React 19"
 
 Los actions buscan simplificar el código de React, veamos un caso muy común: una mutación de datos y luego actualizar el estado en respuesta.
 
-```jsx
+```tsx
 // Before Actions
 function UpdateName({}) {
   const [name, setName] = useState("");
@@ -47,7 +47,7 @@ Donde manejamos varias cosas manualmente, como el estado pendiente o el manejo d
 
 React 19 permite pasarle una función asíncrona al hook `useTransition`, lo que nos permite manejar los estados pendientes, errores y formularios de forma automática.
 
-```jsx
+```tsx
 "use client";
 import { redirect } from "next/navigation";
 import { useState, useTransition } from "react";
@@ -57,10 +57,10 @@ export default function FormAction() {
   const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
 
-  const updateName = (name: string) => {
+  const updateName = (name: string): Promise<string> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject("Error updating name");
+        resolve("Error updating name");
         console.info(name);
       }, 3000);
     });
@@ -102,6 +102,9 @@ Aun así sigue siendo mucho código por ejemplo el error aún está siendo manej
 
 En el siguiente artículo veremos otro escenario: **las actualizaciones optimistas con lo que simplificamos este código**.
 
+
+
 ---
 
 {{< newsletter >}}
+
